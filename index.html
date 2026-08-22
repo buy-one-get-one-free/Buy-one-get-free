@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Secret Messages</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PASSWORD SCREEN -->
+    <div id="passwordScreen" class="password-screen">
+
+        <div class="password-box">
+
+            <h1>🔐 Welcome</h1>
+
+            <p>Enter password to continue</p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+            >
+
+            <button onclick="checkPassword()">
+                Enter
+            </button>
+
+            <p id="passwordError"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN WEBSITE -->
+    <div id="mainWebsite" class="hidden">
+
+        <header>
+            <h1>💌 Secret Messages</h1>
+            <p>Choose someone to send a message</p>
+        </header>
+
+
+        <!-- SLIDING PHOTOS -->
+
+        <div class="slider">
+
+            <button class="slide-btn left" onclick="previousSlide()">
+                ❮
+            </button>
+
+            <div class="slides">
+
+                <!-- PHOTO 1 -->
+
+                <div class="profile active">
+
+                    <img
+                        src="PHOTO1_LINK"
+                        alt="Fucchu"
+                    >
+
+                    <div class="profile-info">
+
+                        <h2>Fucchu</h2>
+
+                        <p>
+                            📍 Sibpuridham Jungle
+                        </p>
+
+                        <button
+                            class="message-button"
+                            onclick="openChat(1)"
+                        >
+                            Click here to message
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 2 -->
+
+                <div class="profile">
+
+                    <img
+                        src="PHOTO2_LINK"
+                        alt="Sani"
+                    >
+
+                    <div class="profile-info">
+
+                        <h2>Sani</h2>
+
+                        <p>
+                            📍 Kailali Jungle
+                        </p>
+
+                        <button
+                            class="message-button"
+                            onclick="openChat(2)"
+                        >
+                            Click here to message
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 3 -->
+
+                <div class="profile">
+
+                    <img
+                        src="PHOTO3_LINK"
+                        alt="Loofi"
+                    >
+
+                    <div class="profile-info">
+
+                        <h2>Loofi</h2>
+
+                        <p>
+                            📍 Mohana River Side
+                        </p>
+
+                        <button
+                            class="message-button"
+                            onclick="openChat(3)"
+                        >
+                            Click here to message
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHOTO 4 -->
+
+                <div class="profile">
+
+                    <img
+                        src="PHOTO4_LINK"
+                        alt="Mushu"
+                    >
+
+                    <div class="profile-info">
+
+                        <h2>Mushu</h2>
+
+                        <p>
+                            📍 Sibpuri Jungle
+                        </p>
+
+                        <button
+                            class="message-button"
+                            onclick="openChat(4)"
+                        >
+                            Click here to message
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="slide-btn right" onclick="nextSlide()">
+                ❯
+            </button>
+
+        </div>
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="dots">
+
+            <span onclick="goToSlide(0)"></span>
+            <span onclick="goToSlide(1)"></span>
+            <span onclick="goToSlide(2)"></span>
+            <span onclick="goToSlide(3)"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHAT WINDOW -->
+
+    <div id="chatWindow" class="chat-window hidden">
+
+        <div class="chat-header">
+
+            <div>
+
+                <strong id="chatName">
+                    Messenger
+                </strong>
+
+                <small>
+                    🟢 Active now
+                </small>
+
+            </div>
+
+            <button onclick="closeChat()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="chatMessages"
+            class="chat-messages"
+        >
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+                onkeypress="handleEnter(event)"
+            >
+
+            <button onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
